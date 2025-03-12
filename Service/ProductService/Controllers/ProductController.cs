@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace OrdersService.Controllers
+namespace ProductService.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class OrdersController : ControllerBase
+    public class ProductsController : ControllerBase
     {
         [HttpGet]
         public IActionResult GetHello()
         {
-            return Ok(new[] { "Order 1", "Order 2", "Order 3" });
+            return Ok(new[] { "Product 1", "Product 2", "Product 3" });
         }
     }
 }
