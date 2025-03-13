@@ -1,5 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// ====================================
+var environment = builder.Environment.EnvironmentName;
+Console.WriteLine($"Environment: {environment}");
+
+// load from appsettings.Development.json
+var testValue = builder.Configuration["Urls"];
+Console.WriteLine($"MongoDbSettings: {testValue}");
+// =====================================
+
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -22,7 +31,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
