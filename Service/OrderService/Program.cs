@@ -6,7 +6,7 @@ Console.WriteLine($"Environment: {environment}");
 
 // load from appsettings.Development.json
 var testValue = builder.Configuration["Urls"];
-Console.WriteLine($"MongoDbSettings: {testValue}");
+Console.WriteLine($"Urls: {testValue}");
 // =====================================
 
 // Add services to the container.
